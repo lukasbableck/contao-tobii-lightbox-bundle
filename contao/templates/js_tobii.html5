@@ -1,7 +1,7 @@
 <?php
-$GLOBALS['TL_CSS']['tobii'] = $this->asset('tobii.css', 'contaotobiilightbox');
+$GLOBALS['TL_CSS']['tobii'] = $this->asset('tobii.css', 'contao_tobii_lightbox');
 ?>
-<script src="<?= $this->asset('tobii.js', 'contaotobiilightbox') ?>"></script>
+<script src="<?= $this->asset('tobii.js', 'contao_tobii_lightbox') ?>"></script>
 <script>
 	(() => {
 		const tobiiInstance = Tobii({
