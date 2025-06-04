@@ -1,8 +1,13 @@
 {
     "name": "lukasbableck/contao-tobii-lightbox-bundle",
     "type": "contao-bundle",
-	"description": "",
+	"description": "This bundle adds the accessible, open-source Tobii lightbox to Contao.",
 	"keywords": [
+		"lightbox",
+		"image",
+		"accessibility",
+		"accessible",
+		"a11y"
 	],
     "license": "LGPL-3.0-or-later",
 	"authors": [

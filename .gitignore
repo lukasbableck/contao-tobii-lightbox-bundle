@@ -1,4 +1,6 @@
 composer.lock
+bun.lock
+bun.lockb
 /node_modules/
 /vendor/
 .DS_Store
