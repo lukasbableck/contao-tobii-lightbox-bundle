@@ -4,6 +4,13 @@ $GLOBALS['TL_CSS']['tobii'] = $this->asset('tobii.css', 'contao_tobii_lightbox')
 <script src="<?= $this->asset('tobii.js', 'contao_tobii_lightbox') ?>"></script>
 <script>
 	(() => {
+		document.querySelectorAll('[data-lightbox]').forEach((element) => {
+			if (!!element.dataset.lightbox) {
+				element.setAttribute('data-group', element.dataset.lightbox);
+			} else {
+				element.setAttribute('data-group', Math.random().toString(36).substr(2, 9));
+			}
+		});
 		const tobiiInstance = Tobii({
 			selector: '[data-lightbox]',
 			zoom: false
