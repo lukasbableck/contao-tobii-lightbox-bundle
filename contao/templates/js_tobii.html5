@@ -13,7 +13,8 @@ $GLOBALS['TL_CSS']['tobii'] = $this->asset('tobii.css', 'contao_tobii_lightbox')
 		});
 		const tobiiInstance = Tobii({
 			selector: '[data-lightbox]',
-			zoom: false
+			zoom: false,
+			captions: false
 		});
 	})();
 </script>
