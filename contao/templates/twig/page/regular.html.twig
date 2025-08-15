@@ -1,0 +1,34 @@
+{% extends '@Contao/page/regular.html.twig' %}
+{% use '@Contao/component/_stylesheet.html.twig' %}
+
+{% block end_of_body %}
+    {% add 'tobii_js' to body %}
+        <script src="{{ asset('tobii.js', 'contao_tobii_lightbox') }}"></script>
+        <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+            (() => {
+                document.querySelectorAll('[data-lightbox]').forEach((element) => {
+                    if (!!element.dataset.lightbox) {
+                        element.setAttribute('data-group', element.dataset.lightbox);
+                    } else {
+                        element.setAttribute('data-group', Math.random().toString(36).substr(2, 9));
+                    }
+                });
+                const tobiiInstance = Tobii({
+                    selector: '[data-lightbox]',
+                    zoom: false,
+                    captions: false
+                });
+            })();
+        </script>
+    {% endadd %}
+    {{ parent() }}
+{% endblock %}
+
+{% block head %}
+    {% add 'tobii_css' to stylesheets %}
+        {% with {file: tobii_css_file|default(asset('tobii.css', 'contao_tobii_lightbox'))} %}
+            {{ block('stylesheet_component') }}
+        {% endwith %}
+    {% endadd %}
+    {{ parent() }}
+{% endblock %}
