@@ -1,7 +1,7 @@
 {
     "name": "lukasbableck/contao-tobii-lightbox-bundle",
     "type": "contao-bundle",
-	"description": "This bundle adds the accessible, open-source Tobii lightbox to Contao.",
+	"description": "This bundle adds the accessible, open-source Tobii lightbox to Contao. Compatible with Contao 5.6+ Twig layouts.",
 	"keywords": [
 		"lightbox",
 		"image",

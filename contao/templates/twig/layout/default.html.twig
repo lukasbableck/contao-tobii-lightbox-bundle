@@ -1,4 +1,4 @@
-{% extends '@Contao/page/regular.html.twig' %}
+{% extends '@Contao/layout/default.html.twig' %}
 {% use '@Contao/component/_stylesheet.html.twig' %}
 
 {% block end_of_body %}
@@ -24,7 +24,7 @@
     {{ parent() }}
 {% endblock %}
 
-{% block head %}
+{% block end_of_head %}
     {% add 'tobii_css' to stylesheets %}
         {% with {file: tobii_css_file|default(asset('tobii.css', 'contao_tobii_lightbox'))} %}
             {{ block('stylesheet_component') }}
